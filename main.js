@@ -32,23 +32,23 @@ const simpleItems = items.map(it => {
 
 })
 
-// console.log(simpleItems)
+console.log(simpleItems)
 
-const itemWithPics = items.map(item => {
-    item.imgURL = items.images
-})
+// const itemWithPics = items.map(item => {
+//     item.imgURL = items.images
+// })
 
-console.log(itemWithPics)
+// console.log(itemWithPics)
 
-let pictureDiv = document.querySelector('.container')
+// let pictureDiv = document.querySelector('.container')
 
-itemWithPics.forEach(item => {
-    let itemPic = document.createElement('img')
-    let itemFig = document.createElement('figure')
-    let itemCap = document.createElement('figcaption')
-    itemCap.textContent = `${items.name}`
-    itemPic.src = item.imgURL
-    itemFig.appendChild(itemPic)
-    itemFig.appendChild(itemCap)
-    pictureDiv.appendChild(itemFig)
-})
+// itemWithPics.forEach(item => {
+//     let itemPic = document.createElement('img')
+//     let itemFig = document.createElement('figure')
+//     let itemCap = document.createElement('figcaption')
+//     itemCap.textContent = `${items.name}`
+//     itemPic.src = item.imgURL
+//     itemFig.appendChild(itemPic)
+//     itemFig.appendChild(itemCap)
+//     pictureDiv.appendChild(itemFig)
+// })
