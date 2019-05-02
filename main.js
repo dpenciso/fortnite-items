@@ -1,54 +1,29 @@
 import { items } from './fortnite-api.js'
 
-const legendaryitems = items.filter(legendaryitem => {
-    return legendaryitem.rarity === 'legendary'
+const item = items;
+
+const mainContainer = document.createElement('div');
+
+mainContainer.className = "container";
+
+
+
+const legendary = items.filter(item => item.type === 'outfit');
+
+
+console.log(legendary)
+
+legendary.forEach(legendary => {
+    let nameElement = document.createElement('div');
+    let imageElement = document.createElement('img');
+
+    nameElement.className = 'box';
+    nameElement.textContent = legendary.name;
+    imageElement.src = legendary.images.background;
+
+    mainContainer.appendChild(nameElement);
+    nameElement.appendChild(imageElement);
+    
 })
 
-const epicitems = items.filter(epicitem => {
-    return epicitem.rarity === 'epic'
-})
-
-const rareitems = items.filter(rareitem => {
-    return rareitem.rarity === 'rare'
-})
-
-const uncommonitems = items.filter(uncommonitem => {
-    return uncommonitem.rarity === 'uncommon'
-})
-
-const commonitems = items.filter(commonitem => {
-    return commonitem.rarity === 'common'
-})
-
-// console.log(legendaryitems, epicitems, rareitems, uncommonitems, commonitems)
-
-const simpleItems = items.map(it => {
-    return {
-        name: it.name,
-        type: it.type,
-        rarity: it.rarity,
-        cost: it.cost,
-    }
-
-})
-
-console.log(simpleItems)
-
-// const itemWithPics = items.map(item => {
-//     item.imgURL = items.images
-// })
-
-// console.log(itemWithPics)
-
-// let pictureDiv = document.querySelector('.container')
-
-// itemWithPics.forEach(item => {
-//     let itemPic = document.createElement('img')
-//     let itemFig = document.createElement('figure')
-//     let itemCap = document.createElement('figcaption')
-//     itemCap.textContent = `${items.name}`
-//     itemPic.src = item.imgURL
-//     itemFig.appendChild(itemPic)
-//     itemFig.appendChild(itemCap)
-//     pictureDiv.appendChild(itemFig)
-// })
+document.body.appendChild(mainContainer)
